@@ -1,20 +1,31 @@
 # PXO
 PXO
 
-Project name: 
+Project name: Poly-Crystal Operations
 
-Description: 
+Description: Generate, analyze and export complex poly-crystalline grain structures having spatial gradients
 
 Table of Contents:
 
-Installation: Installation is the next section in an effective README. Tell other users how to install your project locally. Optionally, include a gif to make the process even more clear for other people.
+Installation: No installation needed. Just add the folder to MATLAB path and start using
 
-Usage: The next section is usage, in which you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
+Usage: Please start with manuals and information files Doc folder. Consider starting with "PXO__Introduction_and_Functrionalities_Vn.n".
 
-Contributing: Larger projects often have sections on contributing to their project, in which contribution instructions are outlined. Sometimes, this is a separate file. If you have specific contribution preferences, explain them so that other developers know how to best contribute to your work. To learn more about how to help others contribute, check out the guide for setting guidelines for repository contributors.
+Contributing: Please go through contributing.md
 
-Credits: Include a section for credits in order to highlight and link to the authors of your project.
+Contributor credits: Contribute to get highlighted here
+
+General credits: I would like to credit the following people and organizations:
+(1) PESIT, Bengaluru: Dept. of Mech. Engg.
+  (1.a) Dr. Kishore T Kashyap: 
+(2) Indian Instutute of Science: 
+  (1.a) Dr. G Narayana Naik: 
+(3) NCET, Bengaluru
+  (3.1) Dr. N G Subramanya Udupa: 
+(4) PES University, Bengaluru: Dept. of Mech. Engg.
+  (4.a) Dr. V Krishna: 
+  (4.b) Dr. T R Seetharam: 
+  (4.c) Dr. K N Seetharam: 
+  (4.d) Dr. Suneel Motru: 
 
 License: Finally, include a section for the license of your project. For more information on choosing a license, check out GitHub’s licensing guide!
-
-Your README should contain only the necessary information for developers to get started using and contributing to your project. Longer documentation is best suited for wikis, outlined below.
