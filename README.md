@@ -1,6 +1,5 @@
-# PXO
-##Project name
-Poly-Crystal Operations
+## Project name
+PXO: Poly-Crystal Operations
 
 ## Description
 Generate, analyze and export complex poly-crystalline grain structures having spatial gradients
