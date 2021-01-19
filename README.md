@@ -1,6 +1,10 @@
 ## Project name
 PXO: Poly-Crystal Operations
 
+```math
+SE = \frac{\sigma}{\sqrt{n}}
+```
+
 ## Description
 A free (MATLAB based) code-base to generate, analyze and export complex poly-crystalline multi-class spatial partitions having orientation and/or texture gradients
 
