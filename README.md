@@ -2,12 +2,10 @@
 PXO: Poly-Crystal Operations
 
 ## Description
-Generate, analyze and export complex poly-crystalline grain structures having spatial gradients
+A free (MATLAB based) code-base to generate, analyze and export complex poly-crystalline multi-class spatial partitions having orientation and/or texture gradients
 
 ## Application fields
-Materials science, Statistical Mechanics, Space partitioning
-
-## Table of Contents:
+Materials science, geology, Statistical Mechanics, Space partitioning
 
 ## Installation
 No installation needed. Just add the folder to MATLAB path and start using
@@ -21,18 +19,5 @@ Please go through contributing.md
 ## Contributor credits
 Contribute to get highlighted here
 
-## General credits: I would like to credit the following people and organizations:
-(1) PESIT, Bengaluru: Dept. of Mech. Engg.
-  (1.a) Dr. Kishore T Kashyap: 
-(2) Indian Instutute of Science: 
-  (1.a) Dr. G Narayana Naik: 
-(3) NCET, Bengaluru
-  (3.1) Dr. N G Subramanya Udupa: 
-(4) PES University, Bengaluru: Dept. of Mech. Engg.
-  (4.a) Dr. V Krishna: 
-  (4.b) Dr. T R Seetharam: 
-  (4.c) Dr. K N Seetharam: 
-  (4.d) Dr. Suneel Motru: 
-
 ## License
-Finally, include a section for the license of your project. For more information on choosing a license, check out GitHub’s licensing guide!
+Refer licensing file for more information.
