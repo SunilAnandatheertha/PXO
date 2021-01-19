@@ -7,6 +7,9 @@ A free (MATLAB based) code-base to generate, analyze and export complex poly-cry
 ## Application fields
 Materials science, geology, Statistical Mechanics, Space partitioning
 
+## Sponsor list
+Sponsorer information will be listed here in the reverse chronological order
+
 ## Installation
 No installation needed. Just add the folder to MATLAB path and start using
 
