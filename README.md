@@ -1,18 +1,8 @@
 ## Project name
 PXO: Poly-Crystal Operations
 
-[![Downloads](https://static.pepy.tech/personalized-badge/video2tfrecord?period=total&units=international_system&left_color=blue&right_color=red&left_text=Downloads)](https://pepy.tech/project/video2tfrecord)
-
-
-[![Downloads](https://img.shields.io/github/downloads/SunilAnandatheertha/PXO/total.svg)]()
-
-[![NoLines](https://img.shields.io/tokei/lines/github/SunilAnandatheertha/PXO)]()
-
-[![Last commit](https://img.shields.io/github/last-commit/SunilAnandatheertha/PXO)]()
-
-https://img.shields.io/github/repo-size/SunilAnandatheertha/PXO
-
-https://img.shields.io/github/downloads/SunilAnandatheertha/PXO/total
+[![Downloads](https://img.shields.io/github/downloads/SunilAnandatheertha/PXO/total.svg)](), [![NoLines](https://img.shields.io/tokei/lines/github/SunilAnandatheertha/PXO)](), 
+[![Last commit](https://img.shields.io/github/last-commit/SunilAnandatheertha/PXO)](), https://img.shields.io/github/repo-size/SunilAnandatheertha/PXO, https://img.shields.io/github/downloads/SunilAnandatheertha/PXO/total
 
 SunilAnandatheertha
 
