@@ -26,8 +26,7 @@ Mathematicians, statistical mechanists and computational materials scientists ar
 All documentations and test cases are available in the repository wiki.
 
 # Example grain structures
-https://github.com/SunilAnandatheertha/PXO/blob/main/Wiki_images/Gallery/Gallery%2002%20-%20Potts%20model%20-%2001.jpg
-Above figure shows some sample grain structures which can be generated using PXO. Test case inputs needed to produce them are in the page https://github.com/SunilAnandatheertha/PXO/wiki/Test-cases.
+Above figure shows some sample grain structures which can be generated using PXO. Test case inputs needed to produce them can be found in the test cases page in PXO/wiki.
 # Acknowledgements
 
 The author acknowledges the computational support offered by the institutions PES Institute of Technology in 2010, Indian Institute of Science during 2013-2014, PES University during 2014-2017 and Coventry University during 2017-2021. The author also acknowledges Dr. Kishore T Kashyap @ PESIT (Bengaluru, India, in 2010) for his theoretical inputs on general grain growth in 2010 and Dr. G Narayana Naik (Indian Institute of Science) and Dr. N G Subramania Udupa (Nagarjuna College of Engineering and Technology) for supervising the author’s master’s project.
