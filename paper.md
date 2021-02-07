@@ -24,7 +24,7 @@ Though Voronoi tessellated geometries of grain structures have been used before 
 All documentations and test cases are available in the repository wiki.
 
 # Example grain structures
-https://github.com/SunilAnandatheertha/PXO/blob/main/Wiki_images/Gallery/Gallery%2002%20-%20Potts%20model%20-%2001.jpg
+![A test image](https://github.com/SunilAnandatheertha/PXO/blob/main/Wiki_images/Gallery/Gallery%2002%20-%20Potts%20model%20-%2001.jpg)
 Above figure shows some sample grain structures which can be generated using PXO. Test case inputs needed to produce them are in the page https://github.com/SunilAnandatheertha/PXO/wiki/Test-cases.
 # Acknowledgements
 
