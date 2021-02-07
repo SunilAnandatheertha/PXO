@@ -1,6 +1,9 @@
 ## Project name
 PXO: Poly-Crystal Operations
 
+[![Downloads](https://static.pepy.tech/personalized-badge/video2tfrecord?period=total&units=international_system&left_color=blue&right_color=red&left_text=Downloads)](https://pepy.tech/project/video2tfrecord)
+
+
 ## Description
 A free (MATLAB based) code-base to generate, analyze and export complex poly-crystalline multi-class spatial partitions having orientation and/or texture gradients
 
