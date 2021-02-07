@@ -10,6 +10,12 @@ PXO: Poly-Crystal Operations
 
 [![Last commit](https://img.shields.io/github/last-commit/SunilAnandatheertha/PXO)]()
 
+https://img.shields.io/github/repo-size/SunilAnandatheertha/PXO
+
+https://img.shields.io/github/downloads/SunilAnandatheertha/PXO/total
+
+SunilAnandatheertha
+
 [![TEXT](LINK)]()
 
 ## Description
