@@ -6,7 +6,7 @@ PXO: Poly-Crystal Operations
 
 [![Downloads](https://img.shields.io/github/downloads/SunilAnandatheertha/PXO/total.svg)]()
 
-https://img.shields.io/tokei/lines/github/SunilAnandatheertha/PXO
+[![NoLines](https://img.shields.io/tokei/lines/github/SunilAnandatheertha/PXO)]()
 
 ## Description
 A free (MATLAB based) code-base to generate, analyze and export complex poly-crystalline multi-class spatial partitions having orientation and/or texture gradients
