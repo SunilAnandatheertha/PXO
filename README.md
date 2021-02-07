@@ -8,7 +8,9 @@ PXO: Poly-Crystal Operations
 
 [![NoLines](https://img.shields.io/tokei/lines/github/SunilAnandatheertha/PXO)]()
 
-[![Commits/y](https://img.shields.io/github/commit-activity/y/SunilAnandatheertha/PXO)]()
+[![Last commit](https://img.shields.io/github/last-commit/SunilAnandatheertha/PXO)]()
+
+[![TEXT](LINK)]()
 
 ## Description
 A free (MATLAB based) code-base to generate, analyze and export complex poly-crystalline multi-class spatial partitions having orientation and/or texture gradients
