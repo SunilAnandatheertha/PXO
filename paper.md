@@ -21,12 +21,12 @@ Mathematicians, statistical mechanists and computational materials scientists ar
 Though Voronoi tessellated geometries of grain structures have been used before in crystal plasticity-based simulations, they are simplifications and do not accurately represent the geometric irregularities presented by nature. 'PXO' is mainly targetted at the materials science research community, where computational materials scientists studying multi-scale thermo-mechanical and texture behaviour of poly-crystalline materials need parametric and realistically tessellated geometric morphologies of the constituent phases reflected in the virtual grain structure. They use such grain structures as an input to further studies such as crystal plasticity based finite element analysis. It is difficult to generate such parametric spatially gradient grain structures with multiple temporally low gradient slices as commonly observed in the real world. 'PXO' enables users to create and analyse such grain structures, which may evolve in the temporal dimension in the presence of second phase particles. PXO is also useful for computational geologists. In addition to various in-built tools, 'PXO' can output the grain structure in a format which can be further opened in 3rd party open source libraries to tend to their specific requirements. 'PXO' presents a single platform  offering such functionalities.
 
 # Documentations
-All documentations and test cases are available in the repository wiki.
+All documentations and test cases are available in the [PXO/Wiki](https://github.com/SunilAnandatheertha/PXO/wiki/Test-cases).
 
 # Example grain structures
 ![Example grain structures](Paper_images/example1.jpg)
 
-Above figure shows some sample grain structures which can be generated using PXO. Test case inputs needed to produce them are in the page [Wiki-TestCases](https://github.com/SunilAnandatheertha/PXO/wiki/Test-cases)
+Above figure shows some sample grain structures which can be generated using PXO. Test case inputs needed to produce them are in the page [Wiki/TestCases](https://github.com/SunilAnandatheertha/PXO/wiki/Test-cases)
 # Acknowledgements
 
 The author acknowledges the computational resource offered by the institutions Indian Institute of Science during 2013-2014, PES University during 2014-2017 and Coventry University during 2017-2021. The author also acknowledges Dr. Kishore T Kashyap (Department of Mechanical Engineering, PESIT (now called as PES University), Bengaluru, India, in 2010) for his theoretical inputs on general grain growth, Dr. G Narayana Naik (Department of Aerospace Engineering, Indian Institute of Science, Bengaluru, India) and Dr. N G Subramania Udupa (Nagarjuna College of Engineering and Technology, Bengaluru, India) for supervising the author’s master’s project in 2012-2014.
