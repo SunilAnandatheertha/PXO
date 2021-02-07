@@ -1,5 +1,5 @@
 ---
-title: 'PXO (Poly-XTAL Operations): Free MATLAB codebase to generate and analyse complex 2D grain structures '
+title: 'PXO (Poly-XTAL Operations): MATLAB codebase to generate and analyse complex 2D grain structures '
 tags:
   - grain structure generation
   - texture and grain structure
