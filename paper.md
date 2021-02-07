@@ -25,7 +25,6 @@ All documentations and test cases are available in the repository wiki.
 
 # Example grain structures
 ![Example grain structures](Paper_images/example1.jpg)
-
 Above figure shows some sample grain structures which can be generated using PXO. Test case inputs needed to produce them are in the page [Wiki-TestCases](https://github.com/SunilAnandatheertha/PXO/wiki/Test-cases)
 # Acknowledgements
 
