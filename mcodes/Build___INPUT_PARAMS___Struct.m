@@ -16,8 +16,8 @@ if (Lattice.type.square + Lattice.type.triangular + Lattice.type.hexagonal) > 1
 end
 Lattice.type.random     = 0;
 %-------------------------------------------------------------
-Lattice.size.i          = 100;
-Lattice.size.j          = 100;
+Lattice.size.i          = 50;
+Lattice.size.j          = 50;
 Lattice.size.i_incr     = 1.0;
 Lattice.size.j_incr     = 1.0;
 Lattice.size.xmin       = -floor(Lattice.size.i)/2+1;
@@ -46,7 +46,7 @@ Lattice.q               = 2^5;
 
 
 %-------------------------------------------------------------
-Lattice.zener.slsp.want_slsp = 0;
+Lattice.zener.slsp.want_slsp = 1;
 Lattice.zener.slsp.Vol_Frac  = 1.00; % IN PERCENTAGE
 %-------------------------------------------------------------
 Lattice.zener.slspc.want_slspc            = 0;      % 0: no clustering is not desired
@@ -54,16 +54,16 @@ Lattice.zener.slspc.typeofcluster         = {'circular'   , 1,...
                                              'oval'       , 0,...
                                              'rectangluar', 0,...
                                              'randomized'};
-Lattice.zener.slspc.noslspclusters        = 1;      % Set the number of circular clusters
+Lattice.zener.slspc.noslspclusters        = 10;      % Set the number of circular clusters
 Lattice.zener.slspc.clusterdistr          = {'circular'   , 0,...
                                              'oval'       , 0,...
                                              'rectangluar', 0,...
                                              'triangular' , 0,...
                                              'hexagfonal' , 0,...
                                              'randomized' , 1};
-Lattice.zener.slspc.islspcvf              = 01.00;  % Individual cluster VOLUME FRACTION (percentage)
-Lattice.zener.slspc.radiusfactorforcircle = 0.3000; % Control circular cluster radius
-Lattice.zener.slspc.cif                   = 0.975;  % Cluster inside factor
+Lattice.zener.slspc.islspcvf              = 5.00;  % Individual cluster VOLUME FRACTION (percentage)
+Lattice.zener.slspc.radiusfactorforcircle = 0.0500; % Control circular cluster radius
+Lattice.zener.slspc.cif                   = 0.800;  % Cluster inside factor
 %-------------------------------------------------------------
 Lattice.zener.cnt.want_cnt                 = 0;     %
 Lattice.zener.cnt.noofcnt                  = 0032;  % 
@@ -112,13 +112,13 @@ MC_Param.StartFrom_MCStep = 1;
 
 
 
-MC_Param.Num_MC_Steps     = 1E3; %<<|<<|<<|<<|<<|<<|<<|<<|<<|<<|<<|
+MC_Param.Num_MC_Steps     = 2E3; %<<|<<|<<|<<|<<|<<|<<|<<|<<|<<|<<|
 
 
 
 %-------------------------------------------------------------
 %-------------------------------------------------------------
-MC_Param.MCP__ALGORITHM   = 05;
+MC_Param.MCP__ALGORITHM   = 01;
 MC_Param.dimensionality   = '2d';
 MC_Param.WeightMatrixID   = 'symm_03';
 MC_Param.constant_centre  = 2;
@@ -129,7 +129,7 @@ MC_Param.Consider_Energy  = 1; % Do not change
 
 
 
-MC_Loop.DataOperation.txtwriteint          = 1E3;  % MCS interval to write data to disk
+MC_Loop.DataOperation.txtwriteint          = 0.5E3;  % MCS interval to write data to disk
 
 
 

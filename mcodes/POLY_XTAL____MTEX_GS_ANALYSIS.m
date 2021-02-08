@@ -1,4 +1,4 @@
-function POLY_XTAL____MTEX_GS_ANALYSIS()
+function [GRAINS] = POLY_XTAL____MTEX_GS_ANALYSIS()
 
 EBSDDATA = loadEBSD('CTF_FILE.ctf');
 EBSDDATA  = EBSDDATA('Aluminium');
@@ -9,7 +9,6 @@ plotx2east
 % EBSDDATA = EBSDDATA.rotate(reflection(xvector));
 EBSDDATA = fill(EBSDDATA);
 [GRAINS, EBSDDATA.grainId] = calcGrains(EBSDDATA('Aluminium'),'angle',15*degree);
-
 
 gB01 = GRAINS.boundary('Al','Al');
 
@@ -28,8 +27,6 @@ plot(GRAINS.innerBoundary,'linecolor','r','linewidth',1)
 figure; %plot(GRAINS,'translucent',.3,'micronbar','off'); legend off; hold on; 
 plot(gB01('Aluminium'),gB01('Aluminium').misorientation.angle./degree,'linewidth',2);
 colormap jet; mtexColorbar('title','misorientation angle')
-
-
 
 KAM01 = KAM(EBSDDATA('Aluminium'),'threshold',5*degree, 'order', 2);
 figure
@@ -56,7 +53,7 @@ grid on
 axis tight
 
 
-
+figure
 plot(EBSDDATA); hold on
 plot(gB01, 'k','linewidth',1); hold on;
 plot(GRAINS.innerBoundary,'linecolor','r','linewidth',1)
@@ -65,10 +62,10 @@ plot(GRAINS.innerBoundary,'linecolor','r','linewidth',1)
 
 
 % BungeEA_ebsd_a_red_3 = GRAINS.meanOrientation.Euler(:,1);
-fprintf('Total no. of grains = %d\n', prod(size(GRAINS)))
-gB_a_red_3 = GRAINS_a_red_3.boundary('Al','Al');
+% fprintf('Total no. of grains = %d\n', prod(size(GRAINS)))
+% gB_a_red_3 = GRAINS_a_red_3.boundary('Al','Al');
 
-
+figure
 BungeEA_GRAINS_MEAN = GRAINS.meanOrientation.Euler(:,1)*(180/pi);
 h1 = histogram(BungeEA_GRAINS_MEAN(:,1), 50); hold on;
 h2 = histogram(BungeEA_GRAINS_MEAN(:,2), 50);

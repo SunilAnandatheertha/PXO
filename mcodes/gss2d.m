@@ -1,30 +1,7 @@
-% [____Poly-Xtal operations V.9.02____] Developed and maintained by Sunil Anandatheertha 
-% (anandats@uni.coventry.ac.uk).Copyright (c) 2020, Sunil Anandatheertha, PhD student 
-% (Coventry University) All rights reserved.
-%------------------------------------------------------------------------------------------------------
-% To_Do
-% todo_B_01. (Solver.WM.Field.Calc) PARAMETRIC EQUATION FOR WEIGHT MATRIX IN DELE CALCULATION COMPUTED FOR EVERY LATTICE SITE
-
-% todo_C_01. (ForCPFEM.Mesh.Calc.Quad) GENERATE REGULAR QUAD MESH FOR ABAQUS
-% todo_C_02. (ForCPFEM.Mesh.Calc.Tri) GENERATE REGULAR TRI MESH FOR ABAQUS
-% todo_C_03. (Domain.GS.ThinFilm.Generate) GENERATE 3D THIN FILM GRAIN STRUCTURE
-% todo_C_04. (Char.GS.GrainSize.ZenerFit) AUTO-FIT THE ZENER EQUATION TO GRAIN SIZE EVOLUTION
-
-% todo_D_04. (PXO_Mtex.TEX) EULER SPACE VIEW OF GENERATED ORIENTATIONS
-% todo_D_05. (PXO_Mtex.TEX) CONTOUR CODF AND PF, SLICES, ETC
-
-% todo_E_01. (PXO_Mtex.TEX) VORONOI EQUIVALENT OF THE GRAIN STRUCTURE
-
-% todo_F_01. (ForCPFEM.TensileSPecimen.Mesh) GENERATE TENSILE SPECIMEN MESH
-
-% todo_G_01. (Documentation.Video.)
-%------------------------------------------------------------------------------------------------------
-% BUGS
-% (1) grain centroid plot makes overlaps !
-% (2) fit equations in todo_A_04 does not look very accurate
-% (3) in todo_F_01, geoemtry generation is not straigftorward. Grids may not be same as G.Structure !!
-%------------------------------------------------------------------------------------------------------
 % INITIALIZATION
+
+rng(1);
+
 XTal_Start_level_n()
 Build___INPUT_PARAMS___Struct()
 WRITE___INPUT_PARAMS___Struct()
@@ -34,11 +11,8 @@ Initialize___MCSolver_DATA()
 tic
 Minimize_Del_H_2D()
 toc
-
-
-[CFN] = plotgrainstructure2d(1, 0, 1, 998);
-
-
+%------------------------------------------------------------------------------------------------------
+[CFN] = plotgrainstructure2d(1, 1, 1, 998);
 %------------------------------------------------------------------------------------------------------
 % POST-PROCESSING
 figure
@@ -48,14 +22,13 @@ figure
     NGRAINS] = Characterize_Grain_Structure_2D(0, 'af2d', 'ALG_01');
 close all;
 figure
-plot__Grain_Structure_in_pixels('2d', TimeSteps, All_Grains_time)
+% plot__Grain_Structure_in_pixels('2d', TimeSteps, All_Grains_time)
 plot__Grain_Structure_in_patches('2d', TimeSteps, All_Grains_time)
-% close all
 %------------------------------------------------------------------------------------------------------
 % VISUALIZATIONS
 plazp2d()
-figure
-[delhamiltonian, CFN] = plotdelham(0);
+% figure
+% [delhamiltonian, CFN] = plotdelham(0);
 figure
 [CFN]                 = plotgrainstructure2d(1, 1, 1, 998);
 %--------------------------
@@ -90,26 +63,3 @@ Build_GS_Struct();
                                                     Temporal_Phase_Texture);
 %------------------------------------------------------------------------------------------------------
 Build__CTF(EulerAngles_Pixellated)
-%------------------------------------------------------------------------------------------------------
-%------------------------------------------------------------------------------------------------------
-% https://docs.google.com/forms/d/e/1FAIpQLScj3G0NjkNleDJUKRQqJOtcqhQETehmkbF-1lY3DhzBV1O2VA/viewform
-%------------------------------------------------------------------------------------------------------
-% This to do list start: 19-08-2020
-% This to do list end:   
-% POLY-XTAL OPERATIONS 9.02
-
-% DONE todo_A_01. (Char.GS.Centroid.Calc) CALCULATE CENTROID FOR EVERY GRAINS
-% DONE todo_A_02. (Char.GS.Centroid.Viz) CENTROID PLOT OF THE POLY-CRYSTAL
-% DONE todo_A_03. (Char.GS.GrBound.Length.Calc) CALCULATE GRAIN BOUNDARY LENGTH FOR EACH GRAIN
-% DONE todo_A_04. (Char.GS.GrBound.Length.Vis) VISUALIZE HOW GRAIN BOUNDARY LENGTH VARIES WITH GRAIN AREA AND FIT MODELS
-
-% DONE todo_D_01. (Data.Build.CTF) EXPORT POLY-CRYSTAL DATA TO .CTF FILE
-% DONE todo_D_02. (Data.Build.Orientation) ASSOCIATE EVERY LATTICE SITE WITH THE ORIENTATION OF THE GRAIN
-% DONE todo_D_03. (PXO_Mtex.GS.GB.MO) GRAIN BOUNDARY MISORIENTATION PLOT
-
-% DONE todo_F_01. (ForCPFEM.TensileSPecimen.Geometry) GENERATE TENSILE SPECIMEN GEOMETRY
-
-% DONE todo_G_01 get plotxtal out to be called independently
-% DONE todo_G_02 get GB calculation and plotting out to be called independently
-%------------------------------------------------------------------------------------------------------
-%------------------------------------------------------------------------------------------------------
