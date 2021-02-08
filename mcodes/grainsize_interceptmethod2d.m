@@ -233,7 +233,7 @@ axis([ min(phase05ab1_data_05a(:,1)) max(phase05ab1_data_05a(:,1))...
     0.85*min([max(phase05ab1_data_05a(:,2)) min(phase05ab1_data_05b(:,2))])...
     1.025*max([max(phase05ab1_data_05a(:,2)) max(phase05ab1_data_05b(:,2))])])
 print('-djpeg100',strcat(pwd, '\results\plots\grainsize\', 'Variation_of_AGS_with_Number_of_intercepts.jpeg'))
-close
+% close
 %<><><><><><><><><><><><><><><><><><>
 %<><><><><><><><><><><><><><><><><><>
 %% Calculate, Display and Write average of average grain size

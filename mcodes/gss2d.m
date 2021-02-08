@@ -28,7 +28,7 @@ plot__Grain_Structure_in_patches('2d', TimeSteps, All_Grains_time)
 % VISUALIZATIONS
 plazp2d()
 % figure
-% [delhamiltonian, CFN] = plotdelham(0);
+[delhamiltonian, CFN] = plotdelham(0);
 figure
 [CFN]                 = plotgrainstructure2d(1, 1, 1, 998);
 %--------------------------
@@ -38,7 +38,9 @@ plot__grain_area___grain_length('2d', All_GrainAreas_time, GBL_time)
 %--------------------------
 % close all
 % postprocessPROPERTIES2d();
-% grainsize_interceptmethod2d; % close all
+
+grainsize_interceptmethod2d; % close all
+
 figure
 [AGS_PXL___Time, No_GRAINS___Time] = Plot___AGS_PXL__vs__No_Grains(Grain_Area_PXL, Number_of_grains,...
                                                                    {1, 'jpeg', 100});

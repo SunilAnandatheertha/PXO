@@ -9,12 +9,14 @@ function [delhamiltonian, CFN] = plotdelham(CFN)
 finf = dlmread(strcat(pwd,'\txtfiledet.txt'));
 delhamiltonian = dlmread(strcat(pwd,'\results','\datafiles','\ChangeInHamiltonian.txt'));
 line(finf(1:numel(delhamiltonian)),delhamiltonian,...
-     'LineStyle','none','color', 'b','LineWidth',1.5,...
-     'marker','+', 'markersize', 3, 'markeredgecolor', 'b', 'markerfacecolor', 'b')
+     'LineStyle','-','color', 'b','LineWidth',1.5,...
+     'marker','+', 'markersize', 12, 'markeredgecolor', 'b', 'markerfacecolor', 'b')
 
 xlabel('m, Monte-Carlo Step number')
 ylabel('\Delta(H)')
-axis tight; axis square; box on
+axis tight; 
+% axis square; 
+box on
 % disp('Hamiltonian variation plot is printed to hamiltonian.jpeg')
 print('-djpeg100',strcat(pwd,'\results','\plots','\Delta_Hamiltonian.jpeg'))
 % pause(4)
