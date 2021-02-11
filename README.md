@@ -1,4 +1,4 @@
-[![NoLines](https://img.shields.io/tokei/lines/github/SunilAnandatheertha/PXO)]() 
+[![NumCodeLines](https://img.shields.io/tokei/lines/github/SunilAnandatheertha/PXO)]() 
 [![Last commit](https://img.shields.io/github/last-commit/SunilAnandatheertha/PXO)]() [![Total downloads](https://img.shields.io/github/downloads/SunilAnandatheertha/PXO/total)]() [![Size](https://img.shields.io/github/repo-size/SunilAnandatheertha/PXO)]()
 
 # About PXO
