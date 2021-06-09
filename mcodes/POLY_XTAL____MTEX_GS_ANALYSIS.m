@@ -22,8 +22,6 @@ hold on
 plot(gB01, 'k','linewidth',1); hold on;
 plot(GRAINS.innerBoundary,'linecolor','r','linewidth',1)
 
-
-
 figure; %plot(GRAINS,'translucent',.3,'micronbar','off'); legend off; hold on; 
 plot(gB01('Aluminium'),gB01('Aluminium').misorientation.angle./degree,'linewidth',2);
 colormap jet; mtexColorbar('title','misorientation angle')
@@ -34,7 +32,6 @@ plot(EBSDDATA('Aluminium'), KAM01./degree);
 mtexColorbar('title', 'KAM (degrees)','fontsize',28); hold on;colormap jet;
 plot(GRAINS.boundary('Aluminium'), '-k', 'LineWidth', 1);
 plot(GRAINS.innerBoundary,'linecolor','k','linewidth',1);
-
 
 % shapefactor = actual grain perimeter/equivalent perimeter
 figure
@@ -52,14 +49,10 @@ axis([1 4 0 100]); axis square; box on
 grid on
 axis tight
 
-
 figure
 plot(EBSDDATA); hold on
 plot(gB01, 'k','linewidth',1); hold on;
 plot(GRAINS.innerBoundary,'linecolor','r','linewidth',1)
-
-
-
 
 % BungeEA_ebsd_a_red_3 = GRAINS.meanOrientation.Euler(:,1);
 % fprintf('Total no. of grains = %d\n', prod(size(GRAINS)))

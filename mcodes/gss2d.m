@@ -65,3 +65,5 @@ Build_GS_Struct();
                                                     Temporal_Phase_Texture);
 %------------------------------------------------------------------------------------------------------
 Build__CTF(EulerAngles_Pixellated)
+
+[GRAINS] = POLY_XTAL____MTEX_GS_ANALYSIS()
