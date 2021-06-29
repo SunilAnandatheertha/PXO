@@ -9,6 +9,8 @@
 ### Introduction
 **PXO** stands for Poly-XTAL Operations. It is an open-source, MATLAB codebase for generating, analyzing and exporting complex space partitions such as multi-phase metallic grain structures. Poly-XTAL operations is named after the various operations which lead to its functionalities relating to poly-crystalline structures. It is useful for mathematicians, statistical mechanists, material scientists and computational geologiests. This wiki has pages for users, developers and collaborators.
 
+Cite PXO as: 
+
 Read the [MOTIVATION](https://github.com/SunilAnandatheertha/PXO/wiki/Motivation) for developing PXO, along with a set of [VALIDATION](https://github.com/SunilAnandatheertha/PXO/wiki/Validation) results, current [LIMITATIONS](https://github.com/SunilAnandatheertha/PXO/wiki/Limitations) of PXO, [TESTCASES](https://github.com/SunilAnandatheertha/PXO/wiki/Test-cases) which you can try out while exploring or trying to use. In case you use MTEX and would like to expand your research scope by being able to generate your own custom grain structures and crystallographic textures, you can use PXO to do so. Detailed information on exactly how to do this can be found in this wiki from the PXO-MTEX link provided in the sidebar of this page. You may use the [DISCUSSION](https://github.com/SunilAnandatheertha/PXO/discussions) page to put forth your ideas, feature requests, documentation requests and bug reports. Development and all documentations by: [Sunil Anandatheertha](https://sunilanandatheertha.github.io/)
 
 ### Application fields
