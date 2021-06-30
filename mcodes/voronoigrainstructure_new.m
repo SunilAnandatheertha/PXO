@@ -1,25 +1,42 @@
 DataFolder = 'C:\Users\anandats\OneDrive - Coventry University\coventry-thesis\MATLAB codes\Grain_Structure_data_Repository\';
 %----------------------------------------------
 rng(1)
-type = 'random';
+type = 'rect';
 switch type
-    case 'random'
-    startx  = 0;
-    starty  = 0;
-    lengthx = 5;
-    widthy  = 5;
-    Nopoints_i = 10;
-    Nopoints_j = 10;
-    xscale = 1.0; % not equal to zero
-    yscale = 1.0; % not equal to zero
-    origshiftx = +0.0;
-    origshifty = +0.0;
+    case 'rect'
+        startx  = 2;
+        starty  = 0;
+        lengthx = 20;
+        widthy  = 4;
+        incr_i = 2.0;
+        incr_j = 0.5;
+        
+        bs_ext = [startx  starty;
+                  lengthx starty;
+                  lengthx widthy;
+                  startx  widthy;
+                  startx  starty];
 
-    bs_ext = [startx  starty;
-              lengthx starty;
-              lengthx widthy;
-              startx  widthy;
-              startx  starty];
+        xorig = startx+incr_i : incr_i : startx+lengthx-incr_i;
+        yorig = starty+incr_j : incr_j : starty+widthy -incr_j;
+        [x, y] = meshgrid(xorig, yorig);
+    case 'random'
+        startx  = 0;
+        starty  = 0;
+        lengthx = 5;
+        widthy  = 5;
+        Nopoints_i = 10;
+        Nopoints_j = 10;
+        xscale = 1.0; % not equal to zero
+        yscale = 1.0; % not equal to zero
+        origshiftx = +0.0;
+        origshifty = +0.0;
+
+        bs_ext = [startx  starty;
+                  lengthx starty;
+                  lengthx widthy;
+                  startx  widthy;
+                  startx  starty];
 
 
         xorig = rand(Nopoints_i, Nopoints_j) - origshiftx;
@@ -90,6 +107,10 @@ ay(ydata == max(ydata)) = 0;
 
 plot(xdata(ax==0), ydata(ax==0), 'kx')
 plot(xdata(ay==0), ydata(ay==0), 'gx')
+
+
+maxsize = [];
+
 
 for count = 1:size(c, 1)
 % %     for countint = 1:size(c{count},1)
