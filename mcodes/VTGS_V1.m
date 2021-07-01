@@ -1,18 +1,20 @@
+close all
+clear all
 % rng(1)
-type = 'rect_hex';
+type = 'hex';
 switch type
     case 'rect'
         startx  = 2;
         starty  = 0;
         lengthx = 20;
-        widthy  = 4;
+        lengthy  = 4;
         incr_i  = 2.0;
         incr_j  = 0.5;
         
-        bs_ext = [startx  starty; lengthx starty; lengthx widthy;
-                  startx  widthy; startx  starty];
+        bs_ext = [startx  starty; lengthx starty; lengthx lengthy;
+                  startx  lengthy; startx  starty];
         xorig = startx+incr_i : incr_i : startx+lengthx-incr_i;
-        yorig = starty+incr_j : incr_j : starty+widthy -incr_j;
+        yorig = starty+incr_j : incr_j : starty+lengthy -incr_j;
         [x, y] = meshgrid(xorig, yorig);
     case 'rect_hex'
         startx   = 0;
@@ -39,12 +41,12 @@ switch type
                   startx+lengthx starty+lengthy;
                   startx  starty+lengthy;
                   startx  starty];
-        bs_ext = [1 1; 4 0; 5 4; 1.5 2; 1 1];
+%         bs_ext = [1 1; 4 0; 5 4; 1.5 2; 1 1];
     case 'random'
         startx  = 0;
         starty  = 0;
         lengthx = 8;
-        widthy  = 5;
+        lengthy  = 5;
         Nopoints_i = 5;
         Nopoints_j = 5;
         xscale = 1.0; % not equal to zero
@@ -52,14 +54,14 @@ switch type
         origshiftx = +0.0;
         origshifty = +0.0;
 
-        bs_ext = [startx  starty; lengthx starty; lengthx widthy;
-                  startx  widthy; startx  starty];
+        bs_ext = [startx  starty; lengthx starty; lengthx lengthy;
+                  startx  lengthy; startx  starty];
 
         xorig = rand(Nopoints_i, Nopoints_j) - origshiftx;
         yorig = rand(Nopoints_i, Nopoints_j) - origshifty;
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         x = xscale*lengthx*xorig;
-        y = yscale*widthy *yorig;
+        y = yscale*lengthy *yorig;
     case 'hex'
         %[xorig, yorig, xstart, ystart, xend, yend] = make_hex_grain_structure_v1();
         %[xorig, yorig, xstart, ystart, xend, yend] = make_hex_grain_structure_v2();
@@ -75,14 +77,11 @@ switch type
         startx  = xstart;
         starty  = ystart;
         lengthx = xend;
-        widthy  = yend;
+        lengthy  = yend;
 
-        bs_ext = [startx  starty; lengthx starty; lengthx widthy;
-                  startx  widthy; startx  starty];
+        bs_ext = [startx  starty; lengthx starty; lengthx lengthy;
+                  startx  lengthy; startx  starty];
 end
-%----------------------------------------------
-%----------------------------------------------
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 x = x(:);
 y = y(:);
@@ -126,3 +125,40 @@ figure
 histogram(vcn_area, 10)
 xlabel('Area of Voronoi cells')
 ylabel('Count')
+%0000000000000000000000000000000000000000000000000000000000000000000
+latx = linspace(startx, startx+lengthx, 100);
+laty = linspace(starty, starty+lengthy, 100);
+pixelarea = abs(latx(1)-latx(2))*abs(laty(1)-laty(2));
+[latx, laty] = meshgrid(latx, laty);
+LATpointgrainIDgrid = zeros(size(latx));
+latx = latx(:);
+laty = laty(:);
+
+
+figure; hold on
+% plot(latx, laty, 'c.')
+pixellatedgrainarea = zeros(size(c));
+for vcn = 1:numel(c)
+    thisgrain_bound_x = v(vcn_bound{vcn}, 1);
+    thisgrain_bound_y = v(vcn_bound{vcn}, 2);
+    %patch(thisgrain_bound_x, thisgrain_bound_y, color(vcn,:), 'facealpha', 0.5)
+
+    thisgrain_bound_reduced_x = thisgrain_bound_x(1:end-1);
+    thisgrain_bound_reduced_y = thisgrain_bound_y(1:end-1);
+
+    [ingrain, ongrainboundary] = inpolygon(latx, laty, thisgrain_bound_reduced_x, thisgrain_bound_reduced_y);
+    grainlatpoints = ingrain+ongrainboundary;
+    grainlatpoints = grainlatpoints/max(grainlatpoints);
+    pointsinthisgrain = find(grainlatpoints~=0);
+    pixellatedgrainarea(vcn) = pixelarea*numel(pointsinthisgrain);
+    thispixelcolor = rand(1,3);
+    plot(latx(ingrain), laty(ingrain), 'ks', 'markerfacecolor', thispixelcolor, 'markeredgecolor', thispixelcolor)
+
+    LATpointgrainIDgrid(grainlatpoints~=0) = vcn;
+    pause(0.1)
+end
+axis equal
+axis tight
+box on
+figure
+histogram(pixellatedgrainarea, 10)
