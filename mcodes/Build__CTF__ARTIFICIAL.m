@@ -97,7 +97,7 @@ end
 if hasvoids == 1
     Phase1(invoid) = 3;
 end
-Phase1
+% Phase1
 % x2     = x1(~invoid);
 % y2     = y1(~invoid);
 % figure
