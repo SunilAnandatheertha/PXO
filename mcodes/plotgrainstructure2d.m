@@ -58,7 +58,7 @@ for rset = 1:floor(m/txtwriteint)
         qe_some{count,1} = find(rs==count);
     end
     hold on
-    if colorplot == 1;
+    if colorplot == 1
         plotgrains2d(q,qe_some,cm,x,y,sizeofmrkr);
     end
     if grainboundarylineplot == 1
@@ -164,7 +164,7 @@ wantslspclust = slpclustinfo1(1);
 %<><><><><><><><><><><><><><><><><><>
 %% DEFINE MARKERSIZE
 if  size(x,1)>= 40 && size(x,1) <= 75
-    sizeofZmrkr = 12;
+    sizeofZmrkr = 8;
 elseif  size(x,1)>75 && size(x,1) <= 101
     sizeofZmrkr = 5;
 elseif size(x,1) > 101 && size(x,1) <= 290
@@ -177,7 +177,8 @@ end
 hold on
 if wantslsp == 1
     zslspe = dlmread(strcat(pwd,'\results\datafiles\e\zener_allover.txt'));
-    plot(x(zslspe),y(zslspe),'gs','MarkerFaceColor','g','MarkerSize',sizeofZmrkr)
+    plot(x(zslspe),y(zslspe),'ro','MarkerFaceColor','r','MarkerSize',sizeofZmrkr)
+    axis off
 end
 %<><><><><><><><><><><><><><><><><><>
 %%  PLOT SCNT
