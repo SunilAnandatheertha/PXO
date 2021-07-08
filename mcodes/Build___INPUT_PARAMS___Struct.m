@@ -35,19 +35,11 @@ Lattice.size.x          = x + Lattice.size.Pert_Fac*rand(Lattice.size.sz1, Latti
 Lattice.size.y          = y + Lattice.size.Pert_Fac*rand(Lattice.size.sz1, Lattice.size.sz2);
 %-------------------------------------------------------------
 
-
-
-
-
-Lattice.q               = 2^5;
-
-
-
-
+Lattice.q               = 10;
 
 %-------------------------------------------------------------
 Lattice.zener.slsp.want_slsp = 1;
-Lattice.zener.slsp.Vol_Frac  = 1.00; % IN PERCENTAGE
+Lattice.zener.slsp.Vol_Frac  = 1.000; % IN PERCENTAGE
 %-------------------------------------------------------------
 Lattice.zener.slspc.want_slspc            = 0;      % 0: no clustering is not desired
 Lattice.zener.slspc.typeofcluster         = {'circular'   , 1,...
@@ -95,7 +87,7 @@ ea   = [ea(Lattice.size.sz1,:); ea];
 ea   = [ea; ea(2,:)];
 Lattice.s__MATLAB_Indices__BounCond_Wrapped = ea;
 dlmwrite(strcat(pwd,'\results','\datafiles','\e','\ewrapped.txt'), ea, 'delimiter', '\t'); clear ea
-
+%-------------------------------------------------------------
 Lattice.ColourMatrix_RGB_UnitNorm    = rand(Lattice.q, 3);
 %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 %\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -112,24 +104,24 @@ MC_Param.StartFrom_MCStep = 1;
 
 
 
-MC_Param.Num_MC_Steps     = 2E3; %<<|<<|<<|<<|<<|<<|<<|<<|<<|<<|<<|
+MC_Param.Num_MC_Steps     = 100; %<<|<<|<<|<<|<<|<<|<<|<<|<<|<<|<<|
 
 
 
 %-------------------------------------------------------------
 %-------------------------------------------------------------
-MC_Param.MCP__ALGORITHM   = 01;
+MC_Param.MCP__ALGORITHM   = 1;
 MC_Param.dimensionality   = '2d';
-MC_Param.WeightMatrixID   = 'symm_03';
+MC_Param.WeightMatrixID   = 'symm_07';
 MC_Param.constant_centre  = 2;
 MC_Param.WeightMatrix     = get__weight_matrix(MC_Param.dimensionality, MC_Param.WeightMatrixID);
-MC_Param.Consider_Energy  = 1; % Do not change
+MC_Param.Consider_Energy  = 0; % Do not change
 %-------------------------------------------------------------
 %-------------------------------------------------------------
 
 
 
-MC_Loop.DataOperation.txtwriteint          = 0.5E3;  % MCS interval to write data to disk
+MC_Loop.DataOperation.txtwriteint          = 100;  % MCS interval to write data to disk
 
 
 
@@ -152,7 +144,7 @@ Viz_options.GS.UnCharacterized.PrintToFile  = 1;
 Viz_options.GS.UnCharacterized.ImageFormat  = 'jpeg';
 Viz_options.GS.UnCharacterized.ImageQuality = 75;
 %-------------------------------------------------------------
-CMDL_display.MC_Kernel__Prog_Disp_Interval_m = 50;
+CMDL_display.MC_Kernel__Prog_Disp_Interval_m = (MC_Loop.DataOperation.txtwriteint)/2;
 %-------------------------------------------------------------
 File_Fold_Operations.writedlm.s.nof = 1;
 %-------------------------------------------------------------
