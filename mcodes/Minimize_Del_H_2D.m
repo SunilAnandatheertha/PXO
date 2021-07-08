@@ -77,8 +77,14 @@ ConsoleDisplay  = 1; % 1: LIGHT -- USE FOR SPEED, 2: HEAVY -- USE FOR MORE INFOR
 %--------------------------------------------------------------------------------
 switch MC_Param.MCP__ALGORITHM
     case 01; disp('Using algorithm 1');  KERNEL__LOOP_MC_2D____ALGORITHM_01(initialmcs, finalmcs, consider_energy, E, delE, ham, SZS1P1, SZS1P2, SZS1P3, vf, skipmatrix, ConsoleDisplay)
-    case 02
-    case 03
+    case 0101; disp('Using algorithm 0101'); KERNEL__LOOP_MC_2D____ALGORITHM_0101(initialmcs, finalmcs, consider_energy, E, delE, ham, SZS1P1, SZS1P2, SZS1P3, vf, skipmatrix, ConsoleDisplay)
+    case 0102; disp('Using algorithm 0102'); KERNEL__LOOP_MC_2D____ALGORITHM_0102(initialmcs, finalmcs, consider_energy, E, delE, ham, SZS1P1, SZS1P2, SZS1P3, vf, skipmatrix, ConsoleDisplay)
+    case 02; disp('Using algorithm 2');  KERNEL__LOOP_MC_2D____ALGORITHM_02(initialmcs, finalmcs, consider_energy, E, delE, ham, SZS1P1, SZS1P2, SZS1P3, vf, skipmatrix, ConsoleDisplay)
+    case 0201; disp('Using algorithm 0201');  KERNEL__LOOP_MC_2D____ALGORITHM_0201(initialmcs, finalmcs, consider_energy, E, delE, ham, SZS1P1, SZS1P2, SZS1P3, vf, skipmatrix, ConsoleDisplay)
+    case 0202; disp('Using algorithm 0202');  KERNEL__LOOP_MC_2D____ALGORITHM_0202(initialmcs, finalmcs, consider_energy, E, delE, ham, SZS1P1, SZS1P2, SZS1P3, vf, skipmatrix, ConsoleDisplay)
+    case 03; disp('Using algorithm 3');  KERNEL__LOOP_MC_2D____ALGORITHM_03(initialmcs, finalmcs, consider_energy, E, delE, ham, SZS1P1, SZS1P2, SZS1P3, vf, skipmatrix, ConsoleDisplay)
+    case 0301; disp('Using algorithm 0301');  KERNEL__LOOP_MC_2D____ALGORITHM_0301(initialmcs, finalmcs, consider_energy, E, delE, ham, SZS1P1, SZS1P2, SZS1P3, vf, skipmatrix, ConsoleDisplay)
+    case 0302; disp('Using algorithm 0302');  KERNEL__LOOP_MC_2D____ALGORITHM_0302(initialmcs, finalmcs, consider_energy, E, delE, ham, SZS1P1, SZS1P2, SZS1P3, vf, skipmatrix, ConsoleDisplay)
     case 04; disp('Using algorithm 4');  KERNEL__LOOP_MC_2D____ALGORITHM_04(initialmcs, finalmcs, consider_energy, E, delE, ham, SZS1P1, SZS1P2, SZS1P3, vf, skipmatrix, ConsoleDisplay)
     case 05; disp('Using algorithm 5');  KERNEL__LOOP_MC_2D____ALGORITHM_05(initialmcs, finalmcs, E, delE, ham, SZS1P1, SZS1P2, SZS1P3, vf, skipmatrix, ConsoleDisplay) % ONLY WHEN THERE ARE ZERO ZENER PARTICLES
     case 06; disp('Using algorithm 6');  KERNEL__LOOP_MC_2D____ALGORITHM_06(initialmcs, finalmcs, consider_energy, E, delE, ham, SZS1P1, SZS1P2, SZS1P3, vf, skipmatrix, ConsoleDisplay)
