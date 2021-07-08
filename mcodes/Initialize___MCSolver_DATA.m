@@ -87,21 +87,21 @@ secondaryphaseinfo{1,5} = zcnt;
 secondaryphaseinfo{1,6} = cntxythetainfo;
 %-------------------------------------------------------------
 %% VOLUME FRACTIONS
-if wantslsp == 1;
+if wantslsp == 1
     vf_zslsp = numel(secondaryphaseinfo{1,2})*100/numel(x);
     % Vf OF ZSLSP
     fprintf('Total slsp Vf: (numel(slsp) = %d)*100/(numel(x) = %d) = %3.6f %% \n', numel(secondaryphaseinfo{1,2}),numel(x),vf_zslsp)
 else
     vf_zslsp = 0; disp('There are no SLSP')
 end
-if wantcnt == 1;
+if wantcnt == 1
     vf_zcnt = numel(unique(secondaryphaseinfo{1,5}))*100/numel(x);
     % Vf OF ZCNT
     fprintf('Total cnt Vf: (numel(cntp) = %d)*100/(numel(x) = %d) = %3.6f %% \n', numel(unique(secondaryphaseinfo{1,5})),numel(x),vf_zcnt)
 else
     vf_zcnt = 0; disp('There are no CNTs')
 end
-if wantslspclust == 1;
+if wantslspclust == 1
     temp = [];
     for count = 1:size(secondaryphaseinfo{1,3},1)
         temp = [temp; secondaryphaseinfo{1,3}{count}];
@@ -113,7 +113,7 @@ else
     vf_zslspc = 0;
     disp('There are no SLSPC')
 end
-if vf_zslsp + vf_zcnt + vf_zslspc ~= 0;
+if vf_zslsp + vf_zcnt + vf_zslspc ~= 0
     vf_zall = vf_zslsp + vf_zcnt + vf_zslspc;
     % TOTAL Vf
     fprintf('Total SPP Vf = %3.6f %% \n',vf_zslsp + vf_zcnt + vf_zslspc)
