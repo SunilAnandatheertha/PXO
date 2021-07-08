@@ -1,4 +1,4 @@
-function KERNEL__LOOP_MC_2D____ALGORITHM_01(initialmcs, finalmcs, consider_energy, E, delE, ham, SZS1P1, SZS1P2, SZS1P3, vf, skipmatrix, ConsoleDisplay)
+function KERNEL__LOOP_MC_2D____ALGORITHM_03(initialmcs, finalmcs, consider_energy, E, delE, ham, SZS1P1, SZS1P2, SZS1P3, vf, skipmatrix, ConsoleDisplay)
 %-------------------------------------------------------------
 global MC_Param Lattice MC_Loop CMDL_display File_Fold_Operations
 %-------------------------------------------------------------
@@ -13,6 +13,11 @@ txtwriteint     = MC_Loop.DataOperation.txtwriteint;
 nof             = File_Fold_Operations.writedlm.s.nof;
 %-------------------------------------------------------------
 start = initialmcs;
+
+
+J_by_k_by_T = 0.0;
+
+Transition_Probability = exp(-J_by_k_by_T);
 %-------------------------------------------------------------
 for ms = start:finalmcs
     for pt = 1:numel(s)
@@ -29,23 +34,27 @@ for ms = start:finalmcs
             esm9 = s(ea(pta+SZS1P3));
             energy1 = 8 - ((esm5==esm1) + (esm5==esm4) + (esm5==esm7) + (esm5==esm2) + (esm5==esm8) + (esm5==esm3) + (esm5==esm6) + (esm5==esm9));
 %             energy1 = esm5==esm1 + esm5==esm4 + esm5==esm7 + esm5==esm2 + esm5==esm8 + esm5==esm3 + esm5==esm6 + esm5==esm9;
-            NS   = floor(1+q*rand(1));
+            states = [esm1; esm2; esm3; esm4; esm6; esm7; esm8; esm9];
+            NS = states(floor(1+8*rand(1)));
             energy2 = 8 - ((NS==esm1) + (NS==esm4) + (NS==esm7) + (NS==esm2) + (NS==esm8) + (NS==esm3) + (NS==esm6) + (NS==esm9));
 %             energy2 = NS==esm1 + NS==esm4 + NS==esm7 + NS==esm2 + NS==esm8 + NS==esm3 + NS==esm6 + NS==esm9;
-            if (energy2-energy1)<=0
+            if (energy2-energy1)<=0 || rand(1)<=Transition_Probability
                 s(pt)   = NS;
                 if Consider_Energy == 1
                     energy1 = energy2;
                 end
+%             elseif 
+%                 s(pt)   = NS;
+%                 if Consider_Energy == 1
+%                     energy1 = energy2;
+%                 end
             end
             
-%             if Consider_Energy == 1
-%                 E(pt) = energy1;
-%             end
+            if Consider_Energy == 1
+                E(pt) = energy1;
+            end
         end
     end
-    
-    
     
     if mod(ms, CMDL_display.MC_Kernel__Prog_Disp_Interval_m) == 0
         if ConsoleDisplay == 1

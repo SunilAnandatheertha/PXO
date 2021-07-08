@@ -1,4 +1,4 @@
-function KERNEL__LOOP_MC_2D____ALGORITHM_01(initialmcs, finalmcs, consider_energy, E, delE, ham, SZS1P1, SZS1P2, SZS1P3, vf, skipmatrix, ConsoleDisplay)
+function KERNEL__LOOP_MC_2D____ALGORITHM_0101(initialmcs, finalmcs, consider_energy, E, delE, ham, SZS1P1, SZS1P2, SZS1P3, vf, skipmatrix, ConsoleDisplay)
 %-------------------------------------------------------------
 global MC_Param Lattice MC_Loop CMDL_display File_Fold_Operations
 %-------------------------------------------------------------
@@ -15,6 +15,7 @@ nof             = File_Fold_Operations.writedlm.s.nof;
 start = initialmcs;
 %-------------------------------------------------------------
 for ms = start:finalmcs
+    NS_full = floor(1+q*rand(sz1,sz2));
     for pt = 1:numel(s)
         if skipmatrix(pt) == 0
             pta  = 2*ceil(pt/sz1) + SZS1P1 + pt;
@@ -29,14 +30,15 @@ for ms = start:finalmcs
             esm9 = s(ea(pta+SZS1P3));
             energy1 = 8 - ((esm5==esm1) + (esm5==esm4) + (esm5==esm7) + (esm5==esm2) + (esm5==esm8) + (esm5==esm3) + (esm5==esm6) + (esm5==esm9));
 %             energy1 = esm5==esm1 + esm5==esm4 + esm5==esm7 + esm5==esm2 + esm5==esm8 + esm5==esm3 + esm5==esm6 + esm5==esm9;
-            NS   = floor(1+q*rand(1));
+%             NS   = floor(1+q*rand(1));
+            NS = NS_full(pt);
             energy2 = 8 - ((NS==esm1) + (NS==esm4) + (NS==esm7) + (NS==esm2) + (NS==esm8) + (NS==esm3) + (NS==esm6) + (NS==esm9));
 %             energy2 = NS==esm1 + NS==esm4 + NS==esm7 + NS==esm2 + NS==esm8 + NS==esm3 + NS==esm6 + NS==esm9;
             if (energy2-energy1)<=0
                 s(pt)   = NS;
-                if Consider_Energy == 1
-                    energy1 = energy2;
-                end
+%                 if Consider_Energy == 1
+% %                     energy1 = energy2;
+%                 end
             end
             
 %             if Consider_Energy == 1
