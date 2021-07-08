@@ -1,5 +1,6 @@
 function grainsize_interceptmethod2d()
 
+PLOTOVERLAYPLOT = 0;
 %% ASSIGN VARIABLE VALUES
 latpar1       = dlmread(strcat(pwd,'\simparameters','\latpar.txt'));
 xmin          = latpar1(1);
@@ -10,7 +11,6 @@ xincr         = latpar1(5);
 yincr         = latpar1(6);
 xlength       = abs(xmin)+abs(xmax);
 ylength       = abs(ymin)+abs(ymax);
-
 
 simpar1 = dlmread(strcat(pwd,'\simparameters','\simpar.txt'));
 mcsmax      = simpar1(2);
@@ -32,7 +32,7 @@ for count = 1:max_interceptincrements
     agstemp = AGSvsMCS;
     numberofvertintercepts = numel(count:count:size(x,1)-count);
     dlmwrite(strcat(pwd,'\results','\datafiles', '\graindata','\grainsizes', '\averagegrainsize_using',...
-        num2str(numberofvertintercepts), '_VERTICAL_intercepts.txt'), AGSvsMCS','delimiter','\t')
+        num2str(numberofvertintercepts), '_VERTICAL_intercepts.txt'), [[mcs1:mcsinterval:mcsmax]' AGSvsMCS'],'delimiter','\t')
     agsVSintrcptincrPLOTdata = [agsVSintrcptincrPLOTdata;numberofvertintercepts max(agstemp)];
 %     close % above line creates a plot and prints it (notice the function latticeline2d(count)), which needs to be closed
     if count == 1
@@ -141,7 +141,7 @@ for count = 1:max_interceptincrements
     
     numberofhorzintercepts = numel(count:count:size(x,1)-count);
     dlmwrite(strcat(pwd,'\results','\datafiles', '\graindata','\grainsizes', '\averagegrainsize_using',...
-        num2str(numberofhorzintercepts), '_HORIZONTAL_intercepts.txt'), AGSvsMCS','delimiter','\t')
+        num2str(numberofhorzintercepts), '_HORIZONTAL_intercepts.txt'), [[mcs1:mcsinterval:mcsmax]' AGSvsMCS'],'delimiter','\t')
     agsVSintrcptincrPLOTdata = [agsVSintrcptincrPLOTdata;numberofhorzintercepts max(agstemp)];
 %     close % above line creates a plot and prints it (notice the function latticeline2d(count)), which needs to be closed
     if count == 1
@@ -214,26 +214,29 @@ phase05ab1_data_05b = agsVSintrcptincrPLOTdata;
 %<><><><><><><><><><><><><><><><><><>
 %% Grain charecterization phase: 05 ab1 -- Overlay plot
 display('<><><><><><><><><><><><><><><><><><>'), display('<><><><><><><><><><><><><><><><><><>')
-display('Initiating Grain Charecterization Phase 05ab1::--overlay plot')
-figure
-plot(phase05ab1_data_05a(:,1),phase05ab1_data_05a(:,2), '-ko','MarkerSize',8, 'LineWidth',2); hold on
-plot(phase05ab1_data_05b(:,1),phase05ab1_data_05b(:,2), '-kh','MarkerSize',8, 'LineWidth',2);
-plot((phase05ab1_data_05a(:,1)+phase05ab1_data_05b(:,1))/2,...
-    (phase05ab1_data_05a(:,2)+phase05ab1_data_05b(:,2))/2, ':ks', 'MarkerSize', 8, 'LineWidth',2);
-grid on
-hlegend = legend('AGS_{vim}','AGS_{him}', 'average(AGS_{vim},AGS_{him})', 'Location', 'SouthEast');
-hxlabel=xlabel('Number of intercepts');
-hylabel=ylabel('Average Grain Size');
-htitle = title('Variation of average grain size with Number of intercepts');
-set(hlegend,'box','off','FontSize',12.5,'FontAngle','italic')
-set(hxlabel,'FontSize',10)
-set(hylabel,'FontSize',10)
-set(htitle,'FontSize',10)
-axis([ min(phase05ab1_data_05a(:,1)) max(phase05ab1_data_05a(:,1))...
-    0.85*min([max(phase05ab1_data_05a(:,2)) min(phase05ab1_data_05b(:,2))])...
-    1.025*max([max(phase05ab1_data_05a(:,2)) max(phase05ab1_data_05b(:,2))])])
-print('-djpeg100',strcat(pwd, '\results\plots\grainsize\', 'Variation_of_AGS_with_Number_of_intercepts.jpeg'))
-% close
+if PLOTOVERLAYPLOT == 1
+    display('Initiating Grain Charecterization Phase 05ab1::--overlay plot')
+    figure
+    plot(phase05ab1_data_05a(:,1),phase05ab1_data_05a(:,2), '-ko','MarkerSize',8, 'LineWidth',1); hold on
+    plot(phase05ab1_data_05b(:,1),phase05ab1_data_05b(:,2), '-kh','MarkerSize',8, 'LineWidth',1);
+    plot((phase05ab1_data_05a(:,1)+phase05ab1_data_05b(:,1))/2,...
+        (phase05ab1_data_05a(:,2)+phase05ab1_data_05b(:,2))/2, '-ks', 'MarkerSize', 10, 'LineWidth',1, 'markerfacecolor', 'r');
+    grid off
+    hlegend = legend('AGS_{vertical intercepts}','AGS_{horizontal intercepts}', 'average(AGS_{vert.},AGS_{hor.int})', 'Location', 'SouthEast');
+    hxlabel=xlabel('Number of intercepts');
+    hylabel=ylabel('Average Grain Size');
+    % htitle = title('Variation of average grain size with Number of intercepts');
+    set(hlegend,'box','off','FontSize',10,'FontAngle','normal')
+    set(hxlabel,'FontSize',11)
+    set(hylabel,'FontSize',11)
+    % set(htitle,'FontSize',10)
+    axis([ min(phase05ab1_data_05a(:,1)) max(phase05ab1_data_05a(:,1))...
+        0.85*min([max(phase05ab1_data_05a(:,2)) min(phase05ab1_data_05b(:,2))])...
+        1.025*max([max(phase05ab1_data_05a(:,2)) max(phase05ab1_data_05b(:,2))])])
+    axis square
+    print('-djpeg100',strcat(pwd, '\results\plots\grainsize\', 'Variation_of_AGS_with_Number_of_intercepts.jpeg'))
+    % close
+end
 %<><><><><><><><><><><><><><><><><><>
 %<><><><><><><><><><><><><><><><><><>
 %% Calculate, Display and Write average of average grain size

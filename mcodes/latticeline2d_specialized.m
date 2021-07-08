@@ -1,5 +1,9 @@
 function [AGSvsMCS_cell] = latticeline2d_specialized(typeofintercept,attri1,attri2)
 
+
+
+SHOULDIPLOT = 1;
+SHOULDIPLOTHISTOGRAM = 0;
 % |||| type ofintercept |||| = V (vertical), H (horizontal), I (inclined) :::::::: 'STRING'
 
 % |||| attri1 |||| = attribute 1
@@ -50,11 +54,8 @@ if strcmp(typeofintercept,'H')==1
     fprintf('Number of Horz. Intercepts used: %d \n',numberofhorizontalintercepts);
 end
 
-
-
 AGSvsMCS_cell = cell(4,1);
 AGSvsMCS_cell{2,1} = cell(numel(mcs1:mcsinterval:mcsmax),1);
-
 
 for mcsnumber = mcs1:mcsinterval:mcsmax
     [qstates] = readstatematrixmc(mcsnumber); % read the state matrix from hard disk
@@ -109,42 +110,44 @@ for mcsnumber = mcs1:mcsinterval:mcsmax
     fprintf('Average grain size = %d units \n',AGSvsMCS(AGCMCScount));
 end
 
-hist(graintograindist3)
-axis square
-print('-djpeg100',strcat(pwd,'\results\plots\grainsize\','Itercept_AGS_HISTogram_','HorizontalIntercepts.jpeg'))
-
+if SHOULDIPLOTHISTOGRAM == 1
+    hist(graintograindist3)
+    axis square
+    print('-djpeg100',strcat(pwd,'\results\plots\grainsize\','Itercept_AGS_HISTogram_','HorizontalIntercepts.jpeg'))
+end
      
      
      
 AGSvsMCS_cell{1,1} = AGSvsMCS;
 
-figure
-h1 = plot(mcs1:mcsinterval:mcsmax,AGSvsMCS(:),'k','LineWidth',0.2); hold on
-h2 = plot(mcs1:mcsinterval:mcsmax,AGSvsMCS(:),'k.','MarkerSize',5);
-xlabel('Lattice edge')
-ylabel('Average Grain Size')
-mcsteps = mcs1:mcsinterval:mcsmax;
+if SHOULDIPLOT == 1
+    figure
+    h1 = plot(mcs1:mcsinterval:mcsmax,AGSvsMCS(:),'-k.','LineWidth',0.2,'MarkerSize',8); hold on
+    % h2 = plot(mcs1:mcsinterval:mcsmax,AGSvsMCS(:),'k.','MarkerSize',5);
+    xlabel('Lattice edge')
+    ylabel('Average Grain Size')
+    mcsteps = mcs1:mcsinterval:mcsmax;
 
-grid on,axis tight, axis square
-xlabel('MC Step number')
-ylabel('Grain size')
-title('Variation of average grain size during microstructure evolution')
+    grid off,axis tight, axis square
+    xlabel('MC Step number')
+    ylabel('Intercept grain size')
+    % title('Variation of average grain size during microstructure evolution')
 
- if strcmp(typeofintercept,'V')==1
-     h3 = text(0.80*mcsmax,0.8*((max(AGSvsMCS)+min(AGSvsMCS))/2),...
-         strcat(num2str(xlength),'x',num2str(ylength),'--',num2str(numberofverticalintercepts),typeofintercept,'intercepts'),...
-         'HorizontalAlignment','center','BackgroundColor',[.7 .9 .7],'Margin',7.5,'EdgeColor','black','LineWidth',2);
-     print('-djpeg100',strcat(pwd,'\results\plots\grainsize\','AGS_vs_MCS--',...
-         num2str(numel(interceptlineincrements:interceptlineincrements:size(x,1)-interceptlineincrements)),'VerticalIntercepts.jpeg'))
- elseif strcmp(typeofintercept,'H')==1
-     h3 = text(0.80*mcsmax,0.8*((max(AGSvsMCS)+min(AGSvsMCS))/2),...
-         strcat(num2str(xlength),'x',num2str(ylength),'--',num2str(numberofhorizontalintercepts),typeofintercept,'intercepts'),...
-         'HorizontalAlignment','center','BackgroundColor',[.7 .9 .7],'Margin',7.5,'EdgeColor','black','LineWidth',2);
-     print('-djpeg100',strcat(pwd,'\results\plots\grainsize\','AGS_vs_MCS--',...
-         num2str(numel(interceptlineincrements:interceptlineincrements:size(x,1)-interceptlineincrements)),'HorizontalIntercepts.jpeg'))
- end
-
-% dlmwrite(strcat(pwd,'\AGSvsMCS.txt'),AGSvsMCS,'delimiter','\t')
+     if strcmp(typeofintercept,'V')==1
+         h3 = text(0.50*mcsmax,0.3*((max(AGSvsMCS)+min(AGSvsMCS))/2),...
+             strcat(num2str(xlength),'x',num2str(ylength),'--',num2str(numberofverticalintercepts),typeofintercept,'intercepts'),...
+             'HorizontalAlignment','left','BackgroundColor',[1 1 1],'Margin',7.5,'EdgeColor','none','LineWidth',1);
+         print('-djpeg100',strcat(pwd,'\results\plots\grainsize\','AGS_vs_MCS--',...
+             num2str(numel(interceptlineincrements:interceptlineincrements:size(x,1)-interceptlineincrements)),'VerticalIntercepts.jpeg'))
+     elseif strcmp(typeofintercept,'H')==1
+         h3 = text(0.50*mcsmax,0.3*((max(AGSvsMCS)+min(AGSvsMCS))/2),...
+             strcat(num2str(xlength),'x',num2str(ylength),'--',num2str(numberofhorizontalintercepts),typeofintercept,'intercepts'),...
+             'HorizontalAlignment','left','BackgroundColor',[1 1 1],'Margin',7.5,'EdgeColor','none','LineWidth',1);
+         print('-djpeg100',strcat(pwd,'\results\plots\grainsize\','AGS_vs_MCS--',...
+             num2str(numel(interceptlineincrements:interceptlineincrements:size(x,1)-interceptlineincrements)),'HorizontalIntercepts.jpeg'))
+     end
+    end
+    % dlmwrite(strcat(pwd,'\AGSvsMCS.txt'),AGSvsMCS,'delimiter','\t')
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

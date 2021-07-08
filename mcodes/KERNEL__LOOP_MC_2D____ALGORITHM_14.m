@@ -53,7 +53,7 @@ for ms = start:finalmcs
         end
     end
     if mod(ms, CMDL_display.MC_Kernel__Prog_Disp_Interval_m) == 0
-        if ConsoleDisplay == 1; fprintf('%dx%d.||.m:%d/%d.\n', sz1, sz2, ms, finalmcs)
+        if ConsoleDisplay == 1; fprintf('%dx%d.||.m:%d/%d.\n', sz1, sz2, ms, finalmcs).
         elseif ConsoleDisplay == 2
             if initialmcs == 1
                 if consider_energy == 1
