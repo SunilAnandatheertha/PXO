@@ -1,0 +1,51 @@
+Currently, no installation is needed for PXO. However, a package manager will be made in future. Follow the below instructions to use all capabilitites of Poly-XTAL Operations
+
+1. Recent versions of Poly-XTAL Operations are developed and tested on Windows 10 with a Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz, 654-bit operating system, x64-based processor. PXO has not yet been tested on other operating systems. Windows 10 is adviced. If you encounter any errors, please put it forth in as much detail as possible [HERE](https://github.com/SunilAnandatheertha/PXO/discussions/categories/issues-os-and-matlab-version) and choose the right label from the label drop down menu.
+
+2. Since Poly-XTAL Operations is currently MATLAB based, MATLAB should be installed. Poly-XTAL operations is mostly tested on MATLAB 2020a. If you encounter any errors in different MATLAB versions, please put it forth in as much detail as possible [HERE](https://github.com/SunilAnandatheertha/PXO/discussions/categories/issues-os-and-matlab-version) and choose the right label from the label drop down menu.
+
+3. Download the `Poly-XTAL operations` codebase from [HERE](https://github.com/SunilAnandatheertha/PXO) from Code drop down menu or [HERE](https://github.com/SunilAnandatheertha/PXO/releases)
+
+4. Unzip the downloaded compressed folder
+
+5. Make the unzipped root folder as present working directory (`pwd`) in MATLAB. You could also add its sub-folders to MATLAB path list, if you feel it necessary, but is not required as of now anyway.
+
+6. PXO should be able to automatically create the necessary folders inside the `pwd` if they dont exist. But, if for some reasons, MATLAB returns errors (which may be due to different versions of MATLAB or even different operating systems, or due to any other factors), then you could create these folders manually and proceed further. In such cases, make sure you have the following folders in the present working directory:
+
+* simulation parameter folders: `..\PXO_root_folderName\simparameters`
+* ..\PXO_root_folderName\results root folder: `..\PXO_root_folderName\results`
+* ..\PXO_root_folderName\results\graphics folders: 
+```
+`..\PXO_root_folderName\results\plots`
+`..\PXO_root_folderName\results\CNT`
+`..\PXO_root_folderName\results\plots\grainsize`
+`..\PXO_root_folderName\results\plots\microstructure_gbonly`
+`..\PXO_root_folderName\results\plots\microstructure_plain`
+`..\PXO_root_folderName\results\plots\microstructure_withgb`
+`..\PXO_root_folderName\results\plots\XTal_2D_Visualizaiton__V2_0`.
+```
+* ..\PXO_root_folderName\results\datafiles folders: 
+```
+`..\PXO_root_folderName\results\datafiles\CTF_FILES_MCSTIME_SLICES`
+`..\PXO_root_folderName\results\datafiles\statematrices`
+`..\PXO_root_folderName\results\datafiles\e`
+`..\PXO_root_folderName\results\datafiles\e\cntele`
+`..\PXO_root_folderName\results\datafiles\e\slspce`
+`..\PXO_root_folderName\results\datafiles\coordinates`
+`..\PXO_root_folderName\results\datafiles\graindata`
+`..\PXO_root_folderName\results\datafiles\graindata\grainsizes`
+`..\PXO_root_folderName\results\datafiles\graindata\Qgrainelements`
+`..\PXO_root_folderName\results\datafiles\graindata\grainboundarye`
+`..\PXO_root_folderName\results\datafiles\graindata\grainelements`
+```
+
+7. Download mtex from [HERE](https://mtex-toolbox.github.io/download). `mtex-5.7.0.zip` has been tesed and it works, though it does throw many errors quite consitently at some of the high-end application problems. `mtex-5.0.3.zip` must also work, as a few aspects of PXO was tested initially using this mtex version. Download it, unzip the compressed folder, set the `pwd` to the mtex root folder. Install using `startup_mtex` command. Post installation revert to PXO directory.
+
+8. Download `gmsh` from [HERE](http://gmsh.info/#Download) and install it your computer. 
+
+9. Download mtex2gmsh from [HERE](https://github.com/DorianDepriester/MTEX2Gmsh). UNzip the compresewd folder. Change the MATLAB `pwd` to the mtex2gmsh root directory. Install it in MATLAB using `Install_MTEX2Gmsh` command. Post installation revert `pwd` to PXO directory
+
+10. The above steps completely sets up the environment. You probably only need to do it only for the 1st time, depending on what kind of a MATLAB license you are using.
+
+***
+Dont forget to cite Poly-XTAL operations in your reports, presentations and publications. Thank you. Good luck. You can use the relavant discussion page [HERE](https://github.com/SunilAnandatheertha/PXO/discussions) to ask questions, request features, report bugs/errors or anything else.
