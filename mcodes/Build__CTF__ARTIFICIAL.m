@@ -40,7 +40,7 @@ end
 Ctf_Build.line15 = 'Phase	X	Y	Bands	Error	Euler1	Euler2	Euler3	MAD	BC	BS';
 %------------------------------------------------------------------------------------------------------------
 %------------------------------------------------------------------------------------------------------------
-Phase1 = reshape(PHASEMATRIX, NumLatticeSites, 1)
+Phase1 = reshape(PHASEMATRIX, NumLatticeSites, 1);
 x1     = reshape(x', NumLatticeSites, 1);
 y1     = reshape(y', NumLatticeSites, 1);
 Bands1 = reshape(05 + randi(5, LatticeSize), NumLatticeSites, 1);

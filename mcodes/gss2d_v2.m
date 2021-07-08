@@ -34,7 +34,7 @@ for trial_count = 1:TOTAL_TRIALS
     WRITE___INPUT_PARAMS___Struct()
     Initialize___MCSolver_DATA()
     Minimize_Del_H_2D()
-    % [CFN] = plotgrainstructure2d(1, 0, 0, 998);
+    [CFN] = plotgrainstructure2d(1, 0, 0, 998);
     % plazp2d()
     [TimeSteps, All_Grains_time, All_GrainBoundaries_time, All_GrainAreas_time, GBL_time,...
         All_GrainEqGrainSize_time, GrainCentroid_xy_time, ogn, CFN, FileLocations, GenericFileName,...
