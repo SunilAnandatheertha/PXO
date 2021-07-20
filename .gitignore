@@ -1,5 +1,3 @@
-delete.txt
-
 contributing.md
 
 paper.md
@@ -13,3 +11,5 @@ docs/
 Wiki_images/
 
 Paper_images/
+
+.gitignore
