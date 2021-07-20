@@ -4,12 +4,12 @@ paper.md
 
 paper.bib
 
-_config.yml
+.yml
+
+.gitignore
 
 docs/
 
 Wiki_images/
 
 Paper_images/
-
-.gitignore
