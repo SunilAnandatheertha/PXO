@@ -37,7 +37,7 @@ Over the past few decades, MATLAB has emerged to be an easy-to-use, powerful and
 # Example grain structures
 ![Example grain structures](Paper_images/example1.jpg)
 
-The above figure shows some sample grain structures, which can be generated using `PXO`. [Tutorials](https://github.com/SunilAnandatheertha/PXO/wiki/Tutorials-and-test-cases) have been provided to help the users to getting started.
+The above figure shows some sample grain structures and space partitions, which can be generated using `PXO`. [Tutorials](https://github.com/SunilAnandatheertha/PXO/wiki/Tutorials-and-test-cases) have been provided to help the users to getting started.
 
 # Acknowledgements
 The author acknowledges the computational resources offered by the following institutions: Indian Institute of Science during 2013-2014, PES University during 2014-2017 and Coventry University during 2017-2021. The author also acknowledges Dr. Kishore T Kashyap (Department of Mechanical Engineering, PES University, Bengaluru, India, in 2010) for his theoretical inputs on grain growth, Dr. G Narayana Naik (Department of Aerospace Engineering, Indian Institute of Science, Bengaluru, India) and Dr. N G Subramania Udupa (Nagarjuna College of Engineering and Technology, Bengaluru, India) for supervising the author’s master’s project in 2012-2014.
