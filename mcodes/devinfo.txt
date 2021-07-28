@@ -1,7 +1,0 @@
-Developer information
--- Developer: Sunil Anandatheertha
--- EmailID:   sunilanandatheertha108@gmail.com
--- WebSite:   http://vishnuiseverywhere.blogspot.in/
--- Interests: Technical application development, Continuum mechanics, Finite Element Method, 
-              Vedic philosophy, music
--- Qualification: MTech in Machine Design(2012-2014)
