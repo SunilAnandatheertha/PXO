@@ -1,4 +1,5 @@
 ***
+[![DOI](https://joss.theoj.org/papers/10.21105/joss.03190/status.svg)](https://doi.org/10.21105/joss.03190)
 [![Last commit](https://img.shields.io/github/last-commit/SunilAnandatheertha/PXO)]()
 [![Total downloads](https://img.shields.io/github/downloads/SunilAnandatheertha/PXO/total)]()
 [![Size](https://img.shields.io/github/repo-size/SunilAnandatheertha/PXO)]()
