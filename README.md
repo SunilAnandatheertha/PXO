@@ -6,7 +6,6 @@
 [![Size](https://img.shields.io/github/repo-size/SunilAnandatheertha/PXO)]()
 [![NumCodeLines](https://img.shields.io/tokei/lines/github/SunilAnandatheertha/PXO)]()
 ![GitHub Sponsors](https://img.shields.io/github/sponsors/SunilAnandatheertha?color=00FFFF)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/SunilAnandatheertha/PXO)
 ![GitHub contributors](https://img.shields.io/github/contributors/SunilAnandatheertha/PXO)
 ![GitHub commits since latest release (by date including pre-releases)](https://img.shields.io/github/commits-since/SunilAnandatheertha/PXO/V10.1.1?include_prereleases)
 ![GitHub Discussions](https://img.shields.io/github/discussions/SunilAnandatheertha/PXO)
