@@ -16,8 +16,7 @@
 Development and all documentations by: [Sunil Anandatheertha](https://sunilanandatheertha.github.io/). Please start with [wiki page](https://github.com/SunilAnandatheertha/PXO/wiki). It will direct you. To use PXO, no installation is needed yet. Just add the folder to MATLAB path and start using. Sponsorer information will be listed here in the reverse chronological order. Please go through contributing.md to see how you may contribute. Contributer credits will be listed in detail here.
 
 ***
-Please cite PXO as: Anandatheertha, S., (2021). PXO (Poly-XTAL Operations): MATLAB codebase to generate and analyse complex 2D grain structures. Journal of Open Source Software, 6(62), 3190. https://doi.org/10.21105/joss.03190
-
+Please cite PXO as: Anandatheertha, S., (2021). PXO (Poly-XTAL Operations): MATLAB Codebase to Generate, Analyse and Export Complex 2D Spatio-Temporally Gradient Grain Structures. Journal of Open Source Software, 6(63), 3190, https://doi.org/10.21105/joss.03190
 ***
 ## License
 Refer licensing file for more information.
