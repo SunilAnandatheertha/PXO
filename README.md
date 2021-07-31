@@ -1,4 +1,4 @@
-
+![Maintaner](https://img.shields.io/badge/maintainer-SunilAnandatheertha-blue)
 [![DOI](https://joss.theoj.org/papers/10.21105/joss.03190/status.svg)](https://doi.org/10.21105/joss.03190)
 [![Size](https://img.shields.io/github/repo-size/SunilAnandatheertha/PXO)]()
 [![NumCodeLines](https://img.shields.io/tokei/lines/github/SunilAnandatheertha/PXO)]()
