@@ -8,7 +8,7 @@ The 1<sup>st</sup> paper was on ![](https://img.shields.io/static/v1?label=PXO&m
 ![GitHub forks](https://img.shields.io/github/forks/SunilAnandatheertha/PXO?label=forks&style=flat) on GitHub. [![Last commit](https://img.shields.io/github/last-commit/SunilAnandatheertha/PXO)]()
 ![GitHub commits since latest release (by date including pre-releases)](https://img.shields.io/github/commits-since/SunilAnandatheertha/PXO/V10.1.1?include_prereleases). The most recent repository is [![Size](https://img.shields.io/github/repo-size/SunilAnandatheertha/PXO)]() big and 
 [![NumCodeLines](https://img.shields.io/tokei/lines/github/SunilAnandatheertha/PXO)]() long. There have been ![GitHub release (by tag)](https://img.shields.io/github/downloads/SunilAnandatheertha/PXO/V10.1.1/total), ![GitHub Sponsors](https://img.shields.io/github/sponsors/SunilAnandatheertha?color=00FFFF), 
-![GitHub contributors](https://img.shields.io/github/contributors/SunilAnandatheertha/PXO), ![GitHub Discussions](https://img.shields.io/github/discussions/SunilAnandatheertha/PXO) and a total of ![](https://komarev.com/ghpvc/?username=SunilAnandatheertha&label=Views) for this repository since 30 July 2021.
+![GitHub contributors](https://img.shields.io/github/contributors/SunilAnandatheertha/PXO), ![GitHub Discussions](https://img.shields.io/github/discussions/SunilAnandatheertha/PXO) since inception and a total of ![](https://komarev.com/ghpvc/?username=SunilAnandatheertha&label=Views) for this repository since 30 July 2021.
 
 ***
 ### INTRODUCTION
