@@ -16,7 +16,3 @@ The 1<sup>st</sup> paper was on ![](https://img.shields.io/static/v1?label=PXO&m
 ![GitHub contributors](https://img.shields.io/github/contributors/SunilAnandatheertha/PXO), ![GitHub Discussions](https://img.shields.io/github/discussions/SunilAnandatheertha/PXO) since inception and a total of ![](https://komarev.com/ghpvc/?username=SunilAnandatheertha&label=Views) for this repository since 30 July 2021. ![Twitter Follow](https://img.shields.io/twitter/follow/polyxtalops?style=social) to recieve regular updates about development and docuemntations.
 ***
 Please cite PXO as: Anandatheertha, S., (2021). PXO (Poly-XTAL Operations): MATLAB Codebase to Generate, Analyse and Export Complex 2D Spatio-Temporally Gradient Grain Structures. Journal of Open Source Software, 6(63), 3190, https://doi.org/10.21105/joss.03190
-***
-## License
-Refer licensing file for more information.
-
