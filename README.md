@@ -1,8 +1,13 @@
 ![Maintaner](https://img.shields.io/badge/maintainer-SunilAnandatheertha-blue)
 [![DOI](https://joss.theoj.org/papers/10.21105/joss.03190/status.svg)](https://doi.org/10.21105/joss.03190)
-[![Size](https://img.shields.io/github/repo-size/SunilAnandatheertha/PXO)]()
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
+[![Size](https://img.shields.io/github/repo-size/SunilAnandatheertha/PXO)]()
 [![NumCodeLines](https://img.shields.io/tokei/lines/github/SunilAnandatheertha/PXO)]()
+
+![GitHub Repo stars](https://img.shields.io/github/stars/SunilAnandatheertha/PXO?style=social)
+![GitHub forks](https://img.shields.io/github/forks/SunilAnandatheertha/PXO?label=forks&style=social)
+
 [![Last commit](https://img.shields.io/github/last-commit/SunilAnandatheertha/PXO)]()
 ![GitHub commits since latest release (by date including pre-releases)](https://img.shields.io/github/commits-since/SunilAnandatheertha/PXO/V10.1.1?include_prereleases)
 
